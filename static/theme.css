@@ -1,0 +1,121 @@
+
+
+input[type=text] {
+  float:center;
+  width: 30%;
+  height: auto;
+  box-sizing: border-box;
+  border: 2px solid #00ffff;
+  border-radius: 200px;
+  font-size: 20px;
+  background-color: #d6d6d6;
+  background-image: '/favicon.ico';
+  background-position: 10px 10px; 
+  background-repeat: repeat-x;
+  padding: 12px;
+  transition: width 0.2s;
+}
+
+input[type=text]:hover{
+    width: 32%;
+    background-color: #b7b7b7 ;
+}
+
+
+button[type=submit] {
+  background-color: #b8b8b8;
+  border: border-box;
+  color: #040132;
+  padding: 7px 7px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family:cursive;
+  font-size:10px;
+}
+
+
+
+body {
+    background-color: black;
+    text-align: left;
+    padding: 10px;
+    color: gray;
+    line-height: 1.4;
+    font-size: 16px;
+/*     background-image: url("//cdn.dribbble.com/users/2097438/screenshots/6476994/image.png"); */
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+a {
+    color: #fbff00;
+    font-style: bolder;
+}
+
+a:hover {
+    color: #100dc9;
+}
+
+/* a:visited {
+    color: #ffbb00;
+} */
+
+h1, h2, h3, h4, h5, h6 {
+    color: #00fbff;
+    font-family: monospace;
+    font-style: bold;
+}
+
+p {
+    font-family: monospace;
+}
+
+figcaption {
+    color: purple;
+    font-family: monospace;
+}
+
+
+
+footer {
+    font-family: monospace;
+}
+
+@media screen and (min-width: 600px) {
+    p {
+        font-size: 15px;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+}
+
+code {
+    background-color: gray;
+    color: black;
+    letter-spacing: 2px;
+    display: inline-block;
+    text-align: left;
+}
+
+code p {
+    font-size: 12px;
+}
+
+
+img {}
+.flag {
+    height: 10px;
+    width: 15px;
+    border-radius: 20%;
+}
+
+
+
