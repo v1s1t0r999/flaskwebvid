@@ -51,10 +51,11 @@ def on_join_room(data):
 
     # add to user list maintained on server
     if room_id not in users_in_room:
-        users_in_room[room_id] = str([sid])
+        users_in_room[room_id] = list(sid)
         emit("user-list", {"my_id": sid})  # send own id only
     else:
-        usrlist = {u_id: names_sid[u_id] for u_id in users_in_room[room_id]}
+        usrlist = {u_id: names_sid[u_id] 
+                       for u_id in users_in_room[room_id]}
         # send list of existing users to the new member
         emit("user-list", {"list": usrlist, "my_id": sid})
         # add new member to user list maintained on server
