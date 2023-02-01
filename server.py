@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, redirect, url_for
 from flask_socketio import SocketIO, emit, join_room
 import platform
 
@@ -10,6 +10,10 @@ socketio = SocketIO(app)
 users_in_room = {}
 rooms_sid = {}
 names_sid = {}
+
+@app.route("/")
+def index():
+    return redirect(url_for("join"))
 
 
 @app.route("/join", methods=["GET"])
@@ -92,6 +96,14 @@ def on_data(data):
             data["type"], sender_sid, target_sid))
     socketio.emit('data', data, room=target_sid)
 
+@app.errorhandler(500)
+def server500(e):
+    users_in_room = {}
+    rooms_sid = {}
+    names_sid = {}
+    return redirect(url_for("index"))
 
-if any(platform.win32_ver()):
-    socketio.run(app, debug=True)
+if __name__=="__main__":
+    if any(platform.win32_ver()):
+        socketio.run(app, debug=True)
+
