@@ -13,7 +13,7 @@ names_sid = {}
 
 @app.route("/")
 def index():
-    return redirect(url_for("join"))
+    return render_template("index.html")
 
 
 @app.route("/join", methods=["GET"])
