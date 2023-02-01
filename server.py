@@ -4,7 +4,7 @@ import platform
 import datetime
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = "wubba lubba dub dub"
+app.config['SECRET_KEY'] = "shhh"
 
 socketio = SocketIO(app)
 
@@ -19,7 +19,7 @@ def index():
 
 @app.route("/join", methods=["GET"])
 def join():
-    display_name = str(request.args.get('display_name')) or "datetime"
+    display_name = str(request.args.get('display_name')) or str(request.remote_addr)
     mute_audio = request.args.get('mute_audio') # 1 or 0
     mute_video = request.args.get('mute_video') # 1 or 0
     room_id = str(request.args.get('room_id')) or str(request.remote_addr)
@@ -37,8 +37,8 @@ def on_connect():
 @socketio.on("join-room")
 def on_join_room(data):
     sid = str(request.sid)
-    room_id = str(data["room_id"])
-    display_name = str(session[room_id]["name"])
+    room_id = str(data["room_id"]) or str(request.remote_addr)
+    display_name = str(session[room_id]["name"]) or str(request.remote_addr)
 
     # register sid to the room
     join_room(room_id)
@@ -67,8 +67,8 @@ def on_join_room(data):
 @socketio.on("disconnect")
 def on_disconnect():
     sid = str(request.sid)
-    room_id = str(rooms_sid[sid])
-    display_name = str(names_sid[sid])
+    room_id = str(rooms_sid[sid]) or str(request.remote_addr)
+    display_name = str(names_sid[sid]) or str(request.remote_addr)
 
     print("[{}] Member left: {}<{}>".format(room_id, display_name, sid))
     emit("user-disconnect", {"sid": sid},
