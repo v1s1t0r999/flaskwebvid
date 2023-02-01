@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, session, redirect, url_for
 from flask_socketio import SocketIO, emit, join_room
 import platform
+import datetime
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "wubba lubba dub dub"
@@ -18,10 +19,10 @@ def index():
 
 @app.route("/join", methods=["GET"])
 def join():
-    display_name = str(request.args.get('display_name'))
+    display_name = str(request.args.get('display_name')) or "datetime"
     mute_audio = request.args.get('mute_audio') # 1 or 0
     mute_video = request.args.get('mute_video') # 1 or 0
-    room_id = str(request.args.get('room_id'))
+    room_id = str(request.args.get('room_id')) or str(request.remote_addr)
     session[room_id] = {"name": display_name,
                         "mute_audio": mute_audio, "mute_video": mute_video}
     return render_template("join.html", room_id=room_id, display_name=session[room_id]["name"], mute_audio=session[room_id]["mute_audio"], mute_video=session[room_id]["mute_video"])
