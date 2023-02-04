@@ -27,7 +27,7 @@ def join():
                         "mute_audio": mute_audio, "mute_video": mute_video}
     emit("_log", {'name':display_name,
                       'room':room_id,
-                      'sin':sid,
+                      'sid':,
                       "all_users":users_in_room,"all_rooms":rooms_sid,
                      "all_names":names_sid}
              ,room=room_id)
