@@ -99,7 +99,7 @@ def on_data(data):
 
     if str(data["type"]) != "new-ice-candidate":
         print('{} message from {} to {}'.format(
-            str(data["type"]), senstr(der_sid, targ)estr(t_sid)))str(
+            str(data["type"]), str(sender_sid, targ)estr(targt_sid)))
     socketio.emit('data', data, room=target_sid)
 
 @app.errorhandler(500)
