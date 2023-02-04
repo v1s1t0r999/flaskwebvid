@@ -25,7 +25,7 @@ def join():
     room_id = request.args.get('room_id') or str(request.remote_addr)
     session[room_id] = {"name": display_name,
                         "mute_audio": mute_audio, "mute_video": mute_video}
-        emit("_log", {'name':display_name,
+    emit("_log", {'name':display_name,
                       'room':room_id,
                       'sin':sid,
                       "all_users":users_in_room,"all_rooms":rooms_sid,
@@ -107,8 +107,7 @@ def server500(e):
 #     users_in_room = {}
 #     rooms_sid = {}
 #     names_sid = {}
-    return f"{e.description}<br>{e.message}<br>{users_in_room}"
-
+    return f"{e.description}<br>{e.message}<br>{users_in_room}<br>{rooms_sid}<br>{names_sid}"
 if __name__=="__main__":
     if any(platform.win32_ver()):
         socketio.run(app, debug=True)
