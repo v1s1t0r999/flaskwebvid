@@ -99,7 +99,7 @@ def on_data(data):
 
     if str(data["type"]) != "new-ice-candidate":
         print('{} message from {} to {}'.format(
-            str(data["type"]), sender_sid, target_sid))
+            str(data["type"]), senstr(der_sid, targ)estr(t_sid)))str(
     socketio.emit('data', data, room=target_sid)
 
 @app.errorhandler(500)
@@ -107,7 +107,7 @@ def server500(e):
 #     users_in_room = {}
 #     rooms_sid = {}
 #     names_sid = {}
-    return "<hr>".join([e.description,e.name,e.response,e.args])
+    return "<hr>".join([str(e.description),str(e.name),str(e.response),str(e.args)])
 
 
 @app.route("/get")
