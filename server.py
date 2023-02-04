@@ -25,6 +25,12 @@ def join():
     room_id = request.args.get('room_id') or str(request.remote_addr)
     session[room_id] = {"name": display_name,
                         "mute_audio": mute_audio, "mute_video": mute_video}
+        emit("_log", {'name':display_name,
+                      'room':room_id,
+                      'sin':sid,
+                      "all_users":users_in_room,"all_rooms":rooms_sid,
+                     "all_names":names_sid}
+             ,room=room_id)
     return render_template("join.html", room_id=room_id, display_name=session[room_id]["name"], mute_audio=session[room_id]["mute_audio"], mute_video=session[room_id]["mute_video"])
 
 
@@ -46,7 +52,7 @@ def on_join_room(data):
     names_sid[sid] = str(display_name)
 
     # broadcast to others in the room
-    emit("_log",{'name':display_name,'room':room_id,'sin':sid)},room=room_id)
+    emit("_log",{'name':display_name,'room':room_id,'sin':sid,"all_users":users_in_room,"all_rooms":rooms_sid,"all_names":names_sid},room=room_id)
     emit("user-connect", {"sid": sid, "name": display_name},
          broadcast=True, include_self=False, room=room_id)
 
