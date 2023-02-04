@@ -107,11 +107,7 @@ def server500(e):
 #     users_in_room = {}
 #     rooms_sid = {}
 #     names_sid = {}
-    full=[]
-    for m in dir(e):
-        if not m.startswith('_'):
-            full.append(m)
-    return "<br>".join(full)
+    return "<hr>".join([e.description,e.name,e.response,e.args])
 
 
 @app.route("/get")
