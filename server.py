@@ -3,7 +3,7 @@ from flask_socketio import SocketIO, emit, join_room
 import platform
 import datetime
 
-app = Flask(__name__,debug=True)
+app = Flask(__name__)#,debug=True)
 app.config['SECRET_KEY'] = "shhh"
 
 socketio = SocketIO(app)
@@ -102,12 +102,16 @@ def on_data(data):
             str(data["type"]), sender_sid, target_sid))
     socketio.emit('data', data, room=target_sid)
 
-# @app.errorhandler(500)
-# def server500(e):
+@app.errorhandler(500)
+def server500(e):
 #     users_in_room = {}
 #     rooms_sid = {}
 #     names_sid = {}
-#     return f"{e.}<hr>{users_in_room}<br>{rooms_sid}<br>{names_sid}"
+    full=[]
+    for m in dir(e):
+        if not m.startswith('_'):
+            full.append(e.m)
+    return "<br>".join(full)
 
 
 @app.route("/get")
