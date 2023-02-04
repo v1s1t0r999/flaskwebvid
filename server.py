@@ -27,7 +27,7 @@ def join():
                         "mute_audio": mute_audio, "mute_video": mute_video}
     emit("_log", {'name':display_name,
                       'room':room_id,
-                      'sid':,
+                      'sid':"/JOIN H",
                       "all_users":users_in_room,"all_rooms":rooms_sid,
                      "all_names":names_sid}
              ,room=room_id)
@@ -52,7 +52,7 @@ def on_join_room(data):
     names_sid[sid] = str(display_name)
 
     # broadcast to others in the room
-    emit("_log",{'name':display_name,'room':room_id,'sin':sid,"all_users":users_in_room,"all_rooms":rooms_sid,"all_names":names_sid},room=room_id)
+    emit("_log",{'name':display_name,'room':room_id,'sid':sid,"all_users":users_in_room,"all_rooms":rooms_sid,"all_names":names_sid},room=room_id)
     emit("user-connect", {"sid": sid, "name": display_name},
          broadcast=True, include_self=False, room=room_id)
 
@@ -107,7 +107,7 @@ def server500(e):
 #     users_in_room = {}
 #     rooms_sid = {}
 #     names_sid = {}
-    return f"{e.description}<br>{e.message}<br>{users_in_room}<br>{rooms_sid}<br>{names_sid}"
+    return f"{e.description}<hr>{users_in_room}<br>{rooms_sid}<br>{names_sid}"
 if __name__=="__main__":
     if any(platform.win32_ver()):
         socketio.run(app, debug=True)
