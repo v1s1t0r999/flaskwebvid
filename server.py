@@ -107,7 +107,14 @@ def server500(e):
 #     users_in_room = {}
 #     rooms_sid = {}
 #     names_sid = {}
-    return f"{e.description}<hr>{users_in_room}<br>{rooms_sid}<br>{names_sid}"
+    return f"{e.}<hr>{users_in_room}<br>{rooms_sid}<br>{names_sid}"
+
+
+@app.route("/get")
+def gett():
+    return f"<hr>{users_in_room}<hr>{rooms_sid}<hr>{names_sid}"
+
+
 if __name__=="__main__":
     if any(platform.win32_ver()):
         socketio.run(app, debug=True)
