@@ -104,10 +104,10 @@ def on_data(data):
 
 @app.errorhandler(500)
 def server500(e):
-    users_in_room = {}
-    rooms_sid = {}
-    names_sid = {}
-    return redirect(url_for("index"))
+#     users_in_room = {}
+#     rooms_sid = {}
+#     names_sid = {}
+    return f"{e.description}<br>{e.message}<br>{users_in_room}"
 
 if __name__=="__main__":
     if any(platform.win32_ver()):
