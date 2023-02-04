@@ -33,6 +33,10 @@ function startCamera()
     });
 }
 
+socket.on('_log', (data)=>{
+          console.log(data)
+});
+
 socket.on("connect", ()=>{
     console.log("socket connected....");
     if (myRoomID == null){
