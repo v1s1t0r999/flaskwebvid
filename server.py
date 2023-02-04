@@ -19,10 +19,10 @@ def index():
 
 @app.route("/join", methods=["GET"])
 def join():
-    display_name = str(request.args.get('display_name')) or str(request.remote_addr)
+    display_name = request.args.get('display_name') or str(request.remote_addr)
     mute_audio = request.args.get('mute_audio') # 1 or 0
     mute_video = request.args.get('mute_video') # 1 or 0
-    room_id = str(request.args.get('room_id')) or str(request.remote_addr)
+    room_id = request.args.get('room_id') or str(request.remote_addr)
     session[room_id] = {"name": display_name,
                         "mute_audio": mute_audio, "mute_video": mute_video}
     return render_template("join.html", room_id=room_id, display_name=session[room_id]["name"], mute_audio=session[room_id]["mute_audio"], mute_video=session[room_id]["mute_video"])
@@ -46,7 +46,7 @@ def on_join_room(data):
     names_sid[sid] = str(display_name)
 
     # broadcast to others in the room
-    print("[{}] New member joined: {}<{}>".format(room_id, display_name, sid))
+    emit("_log",{'name':display_name,'room':room_id,'sin':sid)},room=room_id)
     emit("user-connect", {"sid": sid, "name": display_name},
          broadcast=True, include_self=False, room=room_id)
 
