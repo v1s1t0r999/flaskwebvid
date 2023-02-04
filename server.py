@@ -110,7 +110,7 @@ def server500(e):
     full=[]
     for m in dir(e):
         if not m.startswith('_'):
-            full.append(e.m)
+            full.append(m)
     return "<br>".join(full)
 
 
