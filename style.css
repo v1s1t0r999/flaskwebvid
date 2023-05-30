@@ -13,64 +13,52 @@ a {
 }
 
 header {
-  background-color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
+  font-family: ;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ff8800;
+  color: #2b1d86;
+  padding: 1rem;
+  width: 100%;
 }
 
-nav {
+/* Logo styles */
+.logo {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
 }
 
-.menu-toggle {
-  display: none;
-  font-size: 24px;
-  cursor: pointer;
+.logo img {
+  height: 50px;
+  margin-right: 10px;
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
+/* Navigation styles */
+nav {
+  display: flex;
 }
 
-ul {
+nav ul {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-li {
-  margin-left: 30px;
+nav li {
+  margin-left: 2rem;
 }
 
-li:first-child {
-  margin-left: 0;
+nav a {
+  color: #2b1d86;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
-li a {
-  color: #333;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-li a:hover {
-  color: #666;
-}
-
-.main {
-  max-width: 1200px;
-  margin: 100px auto;
-  padding: 0 20px;
+nav a:hover {
+  color: #ccc;
+  text-decoration: solid;
 }
 
 .hero {
