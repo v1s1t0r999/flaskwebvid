@@ -23,7 +23,7 @@ header {
   width: 100%;
   position: fixed;
   z-index: 999;
-  text-align: right; 
+  text-align: right;
   line-height: 50px; 
   font-weight: 900; 
   text-shadow: 0 0 3px #000, 0 0 5px #000;
@@ -50,6 +50,7 @@ header {
 nav {
   display: flex;
   align-items: right;
+  text-align: right;
 }
 
 nav ul {
