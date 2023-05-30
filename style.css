@@ -16,14 +16,14 @@ header {
   font-family: 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: right;
   background-color: #ff8800;
-  /* color: #2b1d86; */
+  color: #ebffca;
   padding: 1rem;
   width: 100%;
   position: fixed;
   z-index: 999;
-  text-align: center; 
+  text-align: right; 
   line-height: 50px; 
   font-weight: 900; 
   text-shadow: 0 0 3px #000, 0 0 5px #000;
