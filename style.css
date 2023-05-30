@@ -15,7 +15,7 @@ a {
 header {
   font-family: 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: right;
   background-color: #ff8800;
   color: #ebffca;
@@ -39,11 +39,13 @@ header {
 .logo {
   display: flex;
   align-items: center;
+  justify-content: left;
 }
 
 .logo img {
   height: 50px;
   margin-right: 10px;
+  justify-content: left;
 }
 
 /* Navigation styles */
@@ -51,6 +53,7 @@ nav {
   display: flex;
   align-items: right;
   text-align: right;
+  justify-content: right;
 }
 
 nav ul {
