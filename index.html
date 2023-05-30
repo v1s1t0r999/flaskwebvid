@@ -2,34 +2,84 @@
 <html>
 
 <head>
-  <title>Orange Headers</title>
-  <link rel="stylesheet" href="/flaskwebvid/style.css">
+  <title>Modern Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <header>
-    <img src="/static/logo.png" alt="Logo" id="logo">
     <nav>
-      <a href="/about.html">About</a>
-      <a href="/services.html">Services</a>
+      <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+      Modern Website
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Services</li>
+        <li>Contact</li>
+      </ul>
     </nav>
   </header>
 
-  <h1>Welcome to my website!</h1>
-  <h2>About Us</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam gravida neque quis ultrices interdum. Nam ac gravida turpis. Nam finibus, nisl sed tristique euismod, mi lorem blandit dui, eget consectetur arcu mauris nec elit. Donec gravida posuere lorem a vestibulum. Praesent consectetur blandit ullamcorper. Suspendisse potenti. Sed vehicula, risus vitae blandit commodo, purus ante lobortis enim, sit amet blandit orci nibh et elit. Suspendisse potenti.</p>
+  <main>
+    <section class="hero">
+      <h1>Welcome to Modern Website</h1>
+      <p>We create beautiful and responsive websites using modern technologies.</p>
+      Get Started
+    </section>
 
-  <h2>Our Services</h2>
-  <ul>
-    <li>Service 1</li>
-    <li>Service 2</li>
-    <li>Service 3</li>
-  </ul>
+    <section class="services">
+      <h2>Our Services</h2>
+      <div class="service">
+        <i class="fas fa-code"></i>
+        <h3>Web Development</h3>
+        <p>We create responsive and modern websites that are optimized for performance.</p>
+      </div>
+      <div class="service">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>Mobile Development</h3>
+        <p>We create native and hybrid mobile applications that work smoothly across all devices.</p>
+      </div>
+      <div class="service">
+        <i class="fas fa-database"></i>
+        <h3>Database Design</h3>
+        <p>We design and optimize databases to ensure efficient and secure data storage and retrieval.</p>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <h2>What Our Clients Say</h2>
+      <div class="testimonial">
+        <p>"Modern Website exceeded our expectations with their exceptional work. They were professional and easy to work with. We highly recommend them."</p>
+        <h3>John Doe, CEO of ABC Inc.</h3>
+      </div>
+      <div class="testimonial">
+        <p>"We are very happy with the website that Modern Website created for us. It is easy to navigate and looks great on all devices."</p>
+        <h3>Jane Smith, Marketing Manager at XYZ Corp.</h3>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>123 Main St. Anytown, USA</p>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.185803635735!2d-73.98542818459887!3d40.74881757922764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2587f301d8b79%3A0x2c65ae5e48c8e63b!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1634157757569!5m2!1sen!2sus" frameborder="0" allowfullscreen></iframe>
+    <div class="footer-content">
+      Modern Website
+      <p>We are a web and mobile development company that specializes in creating beautiful and responsive websites using modern technologies.</p>
+      <ul class="social-icons">
+        <li><i class="fab fa-facebook"></i></li>
+        <li><i class="fab fa-twitter"></i></li>
+        <li><i class="fab fa-instagram"></i></li>
+        <li><i class="fab fa-linkedin"></i></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2022 Modern Website. All rights reserved.</p>
+    </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
+
+
