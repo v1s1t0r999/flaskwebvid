@@ -39,6 +39,7 @@ header {
 /* Navigation styles */
 nav {
   display: flex;
+  align-items: right;
 }
 
 nav ul {
