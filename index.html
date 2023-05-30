@@ -1,85 +1,97 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <title>Modern Website</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+	<title>Advanced HTML Page Example</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js"></script>
 </head>
-
 <body>
-  <header>
-    <nav>
-      <!-- <div class="menu-toggle"></div> -->
-      <div class="logo"><img src="//saimudra.com/static/images/logo.png"></div>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+	<header>
+		<nav>
+			<div class="logo">
+				<img src="//saimudra.com/static/images/logo.png" alt="Logo">
+				<!-- <span>Company Name</span> -->
+			</div>
+			<ul class="nav-links">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Services</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>
+		<div class="slideshow-container">
+			<div class="mySlides fade">
+				<img src="//picsum.photos/200/200" alt="Slide 1">
+				<div class="caption">Caption 1</div>
+			</div>
+			<div class="mySlides fade">
+				<img src="//picsum.photos/200/200" alt="Slide 2">
+				<div class="caption">Caption 2</div>
+			</div>
+			<div class="mySlides fade">
+				<img src="//picsum.photos/200/200" alt="Slide 3">
+				<div class="caption">Caption 3</div>
+			</div>
+			<a class="prev" onclick="plusSlides(-1)">❮</a>
+			<a class="next" onclick="plusSlides(1)">❯</a>
+		</div>
+	</header>
+	<main>
+		<h1>Welcome to our website</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel magna non mauris tincidunt suscipit ac eu magna. Aliquam erat volutpat.</p>
+		<p>Phasellus vestibulum risus sit amet ipsum lobortis, vitae efficitur libero commodo. Quisque auctor odio eu elit accumsan, vel sagittis erat tincidunt. Etiam in sodales mi. Donec mauris arcu, tincidunt a vehicula a, feugiat vitae est. Duis purus est, feugiat eu nulla sed, fermentum placerat urna. Integer elementum tellus a rutrum sagittis. Praesent finibus consequat magna in lobortis. Sed nec mattis orci.</p>
+		<p>Etiam et massa in sapien blandit dignissim in vel leo. Suspendisse lobortis nunc elit, in iaculis nibh venenatis a. Nulla vitae turpis blandit, finibus urna at, lacinia mi. Donec nec ante enim. Vestibulum at ante non enim hendrerit pellentesque eu ac dolor. In sapien arcu, viverra ut efficitur in, finibus ac turpis. Sed eu ultricies mi, sit amet volutpat augue. Duis venenatis, ipsum a sagittis rhoncus, nisi quam maximus felis, sit amet convallis mauris nunc quis nisi.</p>
+	</main>
+	<footer>
+		<div class="google-maps">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7345.613092406142!2d-73.98474602495083!3d40.74881727288361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2595839b84e9d%3A0x51b3ecd1cbcb8edd!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1625138711719!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+		</div>
+		<ul class="footer-links">
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Services</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+	</footer>
+	<script>
+		// Automatic Slideshow
+		var slideIndex = 0;
+		showSlides();
 
-  <main>
-    <section class="hero">
-      <h1>Saimudra Vinimay</h1>
-      <p><b>Financial Adivors</b></p>
-      Get Started
-    </section>
+		function showSlides() {
+			var i;
+			var slides = document.getElementsByClassName("mySlides");
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			}
+			slideIndex++;
+			if (slideIndex > slides.length) {slideIndex = 1}
+			slides[slideIndex-1].style.display = "block";
+			setTimeout(showSlides, 5000); // Change image every 5 seconds
+		}
 
-    <section class="services">
-      <h2>Our Services</h2>
-      <div class="service">
-        <i class="fas fa-code"></i>
-        <h3>Web Development</h3>
-        <p>We create responsive and modern websites that are optimized for performance.</p>
-      </div>
-      <div class="service">
-        <i class="fas fa-mobile-alt"></i>
-        <h3>Mobile Development</h3>
-        <p>We create native and hybrid mobile applications that work smoothly across all devices.</p>
-      </div>
-      <div class="service">
-        <i class="fas fa-database"></i>
-        <h3>Database Design</h3>
-        <p>We design and optimize databases to ensure efficient and secure data storage and retrieval.</p>
-      </div>
-    </section>
+		// Previous/Next Controls
+		function plusSlides(n) {
+			showSlidesByIndex(slideIndex += n);
+		}
 
-    <section class="testimonials">
-      <h2>What Our Clients Say</h2>
-      <div class="testimonial">
-        <p>"Modern Website exceeded our expectations with their exceptional work. They were professional and easy to work with. We highly recommend them."</p>
-        <h3>John Doe, CEO of ABC Inc.</h3>
-      </div>
-      <div class="testimonial">
-        <p>"We are very happy with the website that Modern Website created for us. It is easy to navigate and looks great on all devices."</p>
-        <h3>Jane Smith, Marketing Manager at XYZ Corp.</h3>
-      </div>
-    </section>
-  </main>
+		// Thumbnail Image Controls
+		function currentSlide(n) {
+			showSlidesByIndex(slideIndex = n);
+		}
 
-  <footer>
-    <div class="footer-content">
-      Modern Website
-      <p>We are a web and mobile development company that specializes in creating beautiful and responsive websites using modern technologies.</p>
-      <ul class="social-icons">
-        <li><i class="fab fa-facebook"></i></li>
-        <li><i class="fab fa-twitter"></i></li>
-        <li><i class="fab fa-instagram"></i></li>
-        <li><i class="fab fa-linkedin"></i></li>
-      </ul>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2022 Modern Website. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+		function showSlidesByIndex(n) {
+			var i;
+			var slides = document.getElementsByClassName("mySlides");
+			if (n > slides.length) {slideIndex = 1}
+			if (n < 1) {slideIndex = slides.length}
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			}
+			slides[slideIndex-1].style.display = "block";
+		}
+	</script>
 </body>
-
 </html>
-
-
