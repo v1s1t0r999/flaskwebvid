@@ -13,7 +13,7 @@ a {
 }
 
 header {
-  font-family: ;
+  font-family: 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,6 +21,8 @@ header {
   color: #2b1d86;
   padding: 1rem;
   width: 100%;
+  position: fixed;
+  z-index: 999;
 }
 
 /* Logo styles */
