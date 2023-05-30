@@ -23,7 +23,17 @@ header {
   width: 100%;
   position: fixed;
   z-index: 999;
+  text-align: center; 
+  line-height: 50px; 
+  font-weight: 900; 
+  text-shadow: 0 0 3px #000, 0 0 5px #000;
 }
+
+
+
+
+
+
 
 /* Logo styles */
 .logo {
