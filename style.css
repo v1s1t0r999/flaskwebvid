@@ -58,10 +58,14 @@ nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  align-items: right;
+  text-align: right;
 }
 
 nav li {
   margin-left: 2rem;
+  align-items: right;
+  text-align: right;
 }
 
 nav a {
