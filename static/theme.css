@@ -47,6 +47,10 @@ a, a:hover {
 .mbr-section-title {
   font-style: normal;
   line-height: 1.3;
+  color:#162b75;
+  letter-spacing:0.06em; 
+  text-shadow: 0 0 3px #fff, 0 0 5px #fff;
+  font-weight: 1000
 }
 
 .mbr-section-subtitle {
@@ -56,6 +60,8 @@ a, a:hover {
 .mbr-text {
   font-style: normal;
   line-height: 1.7;
+  color: #9b5200;
+  text-shadow: 0 0 3px #fff, 0 0 5px #000;
 }
 
 h1,
