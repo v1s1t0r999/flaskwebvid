@@ -1,13 +1,13 @@
 .slider {
 	overflow: hidden;
 	width: 100vw;
-	height: 70vh;
 	position: relative;
     display: flex;
     justify-content: center;
     align-items:center;
     text-align:center;
-    opacity: 0.2;
+    opacity: 1;
+    margin-top:10vh;
    }
 	
    .slider .slide {
