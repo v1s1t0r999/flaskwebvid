@@ -496,3 +496,9 @@
   .mobi-mbri-zoom-out:before {
     content: "\e99c";
   }
+
+.sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}

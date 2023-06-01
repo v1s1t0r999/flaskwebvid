@@ -1,0 +1,56 @@
+.slider {
+	overflow: hidden;
+	width: 100vw;
+	height: 70vh;
+	position: relative;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    text-align:center;
+    opacity: 0.2;
+   }
+	
+   .slider .slide {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	animation: slider 12s infinite;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    text-align:center;
+   }
+	
+   .slider .slide:nth-child(1) {
+	  background-image: url('https://img.freepik.com/free-vector/flying-dollars-set_74855-6465.jpg');
+	  animation-delay: 0s;
+   }
+   
+   .slider .slide:nth-child(2) {
+	  background-image: url('https://img.freepik.com/free-vector/flying-dollars-set_74855-6465.jpg');
+	  animation-delay: -4s;
+   }
+   
+   .slider .slide:nth-child(3) {
+	  background-image: url('https://img.freepik.com/free-vector/flying-dollars-set_74855-6465.jpg');
+	  animation-delay: -8s;
+   }
+   
+   @keyframes slider {
+	0%, 16%, 100% {
+	  transform: translateX(0);
+	  animation-timing-function: ease;
+	}
+	33% {
+	  transform: translateX(-100%);
+	  animation-timing-function: step-end;
+	}
+	83% {
+	  transform: translateX(100%);
+	  animation-timing-function: ease;
+	}
+   }
