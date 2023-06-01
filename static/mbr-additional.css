@@ -352,17 +352,18 @@ body {
   .btn-success-outline,
   .btn-success-outline:active {
     background-color: transparent !important;
-    border-color: transparent;
-    color: #fff6eb;
+    border: 2px solid #fff6eb;
+    border-color: #000000;
+    color: #262626;
   }
   .btn-success-outline:hover,
   .btn-success-outline:focus,
   .btn-success-outline.focus,
   .btn-success-outline.active {
-    color: #ffcf94 !important;
+    color: #fec783 !important;
     background-color: transparent!important;
-    border-color: transparent!important;
     box-shadow: none!important;
+    text-decoration: underline;
   }
   .btn-success-outline.disabled,
   .btn-success-outline:disabled {
