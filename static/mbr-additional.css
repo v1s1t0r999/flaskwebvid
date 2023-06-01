@@ -1380,7 +1380,9 @@ body {
     background-image: none;
   }
   .cid-tqK6nOsFPK {
-    background-color: #ff4c30;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: #ffffff00;
   }
   .cid-tqK6nOsFPK .mbr-fallback-image.disabled {
     display: none;
@@ -1407,13 +1409,13 @@ body {
       margin-bottom: 32px;
       padding: 0;
     }
-  }
+  /* }
   .cid-tqK6nOsFPK .text-wrapper .mbr-section-title {
     margin-bottom: 28px;
   }
   .cid-tqK6nOsFPK .text-wrapper .mbr-text {
     margin-bottom: 48px;
-  }
+  } */
   .cid-tqK6nOsFPK .image-wrap {
     display: flex;
   }
@@ -2433,4 +2435,4 @@ body {
   .cid-tqK7jZKMlB .soc-wrapper {
     color: #ffe4c1;
   }
-  
+}
