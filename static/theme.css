@@ -519,6 +519,15 @@ nav .mbr-section-btn {
   -webkit-animation: gradient-animation 5s infinite alternate;
 }
 
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+
 .menu .navbar-brand {
   display: -webkit-flex;
 }
