@@ -585,7 +585,8 @@
 				  <span class="mbr-iconfont mobi-mbri-contact-form mobi-mbri"></span>
 				  <span class="mbr-iconfont mobi-mbri-letter mobi-mbri"></span>
 				  <span class="mbr-iconfont mobi-mbri-smile-face mobi-mbri"></span>
-				  <form action="//saimudra.com/contact" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name"><input type="hidden" name="email" data-form-email="true" value="yCWximo/HmMnbiliLGaNlGi6AejRUXR65+qbYeth+tMA1paGLfWlfkvegxQOqCTgg51QebgVVhJUmnLWHUkPd40tND6gRsDL86IoNs69FIdDfs4tHjxqoCgpoLHTownD.unWRElwG1rKtJO4WxXEBtqI2U+8RvaBr1ozOLIZ0nVS4tJeoWGJvgg7w1tZ7f/vEZGZRWIj3I7/I6QiWvctjG1u51+nlxWz1H4kwdGPcuGTqQzoMaJER507brJJ2HOsw">
+				  <form action="//saimudra.com/contact" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name">
+					<input type="hidden" name="email" data-form-email="true" value="yCWximo/HmMnbiliLGaNlGi6AejRUXR65+qbYeth+tMA1paGLfWlfkvegxQOqCTgg51QebgVVhJUmnLWHUkPd40tND6gRsDL86IoNs69FIdDfs4tHjxqoCgpoLHTownD.unWRElwG1rKtJO4WxXEBtqI2U+8RvaBr1ozOLIZ0nVS4tJeoWGJvgg7w1tZ7f/vEZGZRWIj3I7/I6QiWvctjG1u51+nlxWz1H4kwdGPcuGTqQzoMaJER507brJJ2HOsw">
 					  <div class="row">
 						  <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out
 							  the form!</div>
@@ -600,10 +601,7 @@
 							  </h1>
 						  </div>
 						  <div class="col-lg-6 col-md-12 col-sm-12 form-group mb-3" data-for="name">
-							  <input type="text" name="fname" placeholder="First Name" data-form-field="fname" class="form-control display-7" value="" id="name-form1-i">
-						  </div>
-						  <div class="col-lg-6 col-md-12 col-sm-12 form-group mb-3" data-for="name">
-							  <input type="text" name="lname" placeholder="Last Name" data-form-field="lname" class="form-control display-7" value="" id="name-form1-i">
+							  <input type="text" name="name" placeholder="Full Name" data-form-field="name" class="form-control display-7" value="" id="name-form1-i">
 						  </div>
 						  <div data-for="email" class="col-lg-6 col-md-12 col-sm-12 form-group mb-3">
 							  <input type="email" name="email" placeholder="Email" data-form-field="Email" class="form-control display-7" value="" id="email-form1-i">
@@ -797,6 +795,27 @@
 		  </div>
 	  </div>
   </section>
+
+
+  <script>
+	  $('#submit-btn').click(function() {
+    $.ajax({
+        type: 'POST',
+        url: '/contact',
+        data: JSON.stringify({
+            fname: $("#name-form1-i").val(),
+            lname: "",
+            email: $("#email-form1-i").val(),
+            msg: $("#textarea-form1-i").val(),
+        }),
+        success: function(data) {
+            console.log(JSON.stringify(data));
+        },
+        contentType: "application/json",
+        dataType: 'json'
+    });
+  });
+  </script>
   
   
   <script src="//mobirise.com/extensions/resultm5/advertising-agency/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
