@@ -1470,7 +1470,7 @@ body {
     border-radius: 20px;
     margin-bottom: 20px;
   }
-  @media (max-width: 992px) {
+  @media (max-width: 100000px) {
     .maindiv .image-wrap .image-wrapper .image {
       border-radius: 20px !important;
     }
