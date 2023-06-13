@@ -20,6 +20,8 @@
 	<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kantumruy+Pro:100,200,300,400,500,600,700,100i,200i,300i,400i,500i,600i,700i&amp;display=swap"></noscript>
 	<link rel="preload" as="style" href="/static/mbr-additional.css">
 	<link rel="stylesheet" href="/static/mbr-additional.css" type="text/css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
 	
 </head>
 
@@ -61,6 +63,7 @@
 		  </div>
 	  </nav>
   </section>
+<main id="main">
 <style>
 /* Reset styles */
 * {
@@ -210,5 +213,15 @@ margin-left: 10px;
 <p>© 2021 Our Company | All Rights Reserved</p>
 <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
 </footer>
+</main>
+<script>
+$(window).resize(function () { 
+    $('#main').css('padding-top', parseInt($('#menu1-0').css("height"))+10);
+});
+
+$(window).load(function () { 
+    $('#main').css('padding-top', parseInt($('#menu1-0').css("height"))+10);        
+});
+</script>
 </body>
 </html>
